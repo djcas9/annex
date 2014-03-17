@@ -10,7 +10,7 @@ OLD
 ```javascript
 // GET #/events/1390088285/1395088285/1/100.
 route.add('events/:start/:end/:offset/:limit', function(start, end, offset, limit){
-  // this sucks and it's a lot to rmemeber and the routes get confusing
+  // this sucks and it's a lot to remember and gets confusing quickly
 });
 ```
 
