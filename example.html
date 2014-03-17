@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Annex</title>
+</head>
+<body>
+<h1>Annex Example</h1>
+
+<a class='example-1' href="#/example/1?array[]=1&array[]=2&array[]=3&test[foo]=1&test[bar]=2&test[baz]=3">
+Example 1: #/example?array[]=1&array[]=2&array[]=3&test[foo]=1&test[bar]=2test[baz]=3
+</a>
+<div class="output-example-1"></div>
+
+<a class='example-2' href="#/example/1345/hello">
+Example 2: #/example/1345/hello
+</a>
+<div class="output-example-2"></div>
+
+<script type="text/javascript" src="annex.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+var route = new Annex();
+
+route.add('example/:id', function(req, params){
+  console.log("EXAMPLE DATA:", req, params);
+  $('.output-example-' + req.id).html(JSON.stringify(req) + " <br/>" + JSON.stringify(params));
+});
+
+route.add("example/:id/:word", function(req, params) {
+  $('.output-example-2').html(JSON.stringify(req) + " <br/>" + JSON.stringify(params));
+});
+
+</script>
+</body>
+</html>
