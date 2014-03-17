@@ -8,6 +8,7 @@ I found myself creating crazy routes to paginate data and passing params like so
 
 OLD
 ```javascript
+// GET #/events/1390088285/1395088285/1/100.
 route.add('events/:start/:end/:offset/:limit', function(start, end, offset, limit){
   // this sucks and it's a lot to rmemeber and the routes get confusing
 });
